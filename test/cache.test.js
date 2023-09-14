@@ -38,6 +38,11 @@ test('value test 2', () => {
     expect(cache.getValue(2)).toBe('two')
 });
 
+test('hits if there is no key', () => {
+    const cache = new Cache()
+    expect(cache.getHits(1)).toBeNull()
+});
+
 test('logs test', () => {
     const cache = new Cache()
     cache.addKV(1, 'one')
